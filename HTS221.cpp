@@ -19,14 +19,14 @@ HTS221::HTS221(const char* devicePath, uint8_t deviceAddress)
         throw std::runtime_error("Failed to verify the device identity.");
     }
 
-    data = 0x00000000;
+    data = 0;
 
     data |= HTS221_BDU_ENABLE;
     data |= HTS221_DATARATE_1_HZ;
 
     i2c_smbus_write_byte_data(device, HTS221_REGISTER_CTRL_REG1, (uint8_t)data);
 
-    data = 0b00000000;
+    data = 0;
 
     data |= HTS221_AVERAGE_HUMIDITY_4_SAMPLES;
     data |= HTS221_AVERAGE_TEMPERATURE_2_SAMPLES;
