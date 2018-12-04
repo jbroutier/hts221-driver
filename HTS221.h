@@ -24,13 +24,17 @@ public:
     void calibrate();
     void disableHeater();
     void enableHeater();
+
     double getHumidity();
     double getTemperature();
+
     void powerDown();
     void powerUp();
+
     void setAverageHumiditySamples(HTS221AverageHumiditySamples_t averageHumiditySamples);
     void setAverageTemperatureSamples(HTS221AverageTemperatureSamples_t averageTemperatureSamples);
     void setDataRate(HTS221DataRate_t dataRate);
+    
     void triggerMeasurement();
 
 private:
