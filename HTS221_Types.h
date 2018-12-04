@@ -41,6 +41,12 @@ typedef enum
 
 typedef enum
 {
+    HTS221_HEATER_DISABLE = (0b0 << 1),
+    HTS221_HEATER_ENABLE  = (0b1 << 1),
+} HTS221HeaterMode_t;
+
+typedef enum
+{
     HTS221_POWER_DOWN = (0b0 << 7),
     HTS221_POWER_UP   = (0b1 << 7),
 } LPS25HPowerMode_t;

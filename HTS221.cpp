@@ -97,6 +97,30 @@ void HTS221::calibrate()
     }
 }
 
+void HTS221::disableHeater()
+{
+    int32_t data = 0;
+
+    data = i2c_smbus_read_byte_data(device, HTS221_REGISTER_CTRL_REG2);
+
+    data &= ~(0b1 << 1);
+    data |= HTS221_HEATER_DISABLE;
+
+    i2c_smbus_write_byte_data(device, HTS221_REGISTER_CTRL_REG2, (uint8_t)data);
+}
+
+void HTS221::enableHeater()
+{
+    int32_t data = 0;
+
+    data = i2c_smbus_read_byte_data(device, HTS221_REGISTER_CTRL_REG2);
+
+    data &= ~(0b1 << 1);
+    data |= HTS221_HEATER_ENABLE;
+
+    i2c_smbus_write_byte_data(device, HTS221_REGISTER_CTRL_REG2, (uint8_t)data);
+}
+
 double HTS221::getHumidity()
 {
     int32_t data = 0;

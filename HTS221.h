@@ -21,18 +21,17 @@ public:
     explicit HTS221(const char* devicePath, uint8_t deviceAddress = HTS221_DEVICE_ADDRESS);
     virtual ~HTS221();
 
+    void calibrate();
+    void disableHeater();
+    void enableHeater();
     double getHumidity();
     double getTemperature();
-
-    void calibrate();
-    void triggerMeasurement();
-
     void powerDown();
     void powerUp();
-
     void setAverageHumiditySamples(HTS221AverageHumiditySamples_t averageHumiditySamples);
     void setAverageTemperatureSamples(HTS221AverageTemperatureSamples_t averageTemperatureSamples);
     void setDataRate(HTS221DataRate_t dataRate);
+    void triggerMeasurement();
 
 private:
     int device;
