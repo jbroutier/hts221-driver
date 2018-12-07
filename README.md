@@ -45,7 +45,7 @@ int main(int argc, char** argv)
 
 ## Documentation
 
-#### `HTS221::HTS221(const char* devicePath, uint8_t deviceAddress = HTS221_DEVICE_ADDRESS)`
+### `HTS221::HTS221(const char* devicePath, uint8_t deviceAddress = HTS221_DEVICE_ADDRESS)`
 ___
 Creates a HTS221 object.
 
