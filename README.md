@@ -30,6 +30,7 @@ int main(int argc, char** argv)
     double humidity, temperature;
 
     HTS221 sensor("/dev/i2c-1");
+    sensor.powerUp();
     sensor.calibrate();
 
     humidity = sensor.getHumidity();
