@@ -49,6 +49,6 @@ typedef enum
 {
     HTS221_POWER_DOWN = (0b0 << 7),
     HTS221_POWER_UP   = (0b1 << 7),
-} LPS25HPowerMode_t;
+} HTS221PowerMode_t;
 
 #endif // #ifndef HTS221_TYPES_H
