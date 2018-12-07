@@ -15,6 +15,10 @@ This piece of software is available under the terms of the [MIT License](LICENSE
 
 * Initial release.
 
+**r1.0.1**
+
+* Fixed a misnamed enum.
+
 ## Example
 
 ```cpp
