@@ -46,7 +46,6 @@ int main(int argc, char** argv)
 ## Documentation
 
 ### `HTS221::HTS221(const char* devicePath, uint8_t deviceAddress = HTS221_DEVICE_ADDRESS)`
-___
 Creates a HTS221 object.
 
 The *devicePath* parameter corresponds to the path of the I2C bus on the system.  
@@ -63,49 +62,50 @@ Upon creation of the object, the sensor is configured with the following options
 
 Throws an `std::runtime_error` exception if the communication with the sensor fails for any reason.
 
-### `HTS221::~HTS221()`
 ___
+### `HTS221::~HTS221()`
 Destroys the object, closing the connection to the sensor.
 
-### `void HTS221::calibrate()`
 ___
+### `void HTS221::calibrate()`
 Calibrates the sensor.
 
 You must call this method at least once before any measurement attempt.
 
-### `void HTS221::disableHeater()`
 ___
+### `void HTS221::disableHeater()`
 Turns off the internal heating element of the sensor.
 
-### `void HTS221::enableHeater()`
 ___
+### `void HTS221::enableHeater()`
+
 Turns on the internal heating element of the sensor.
 
 The heating element can be used to speed up the sensor recovery time in case of condensation.  
 You shouldn't try to read humidity and temperature values while the heating element is working.
 
-### `double HTS221::getHumidity()`
 ___
+### `double HTS221::getHumidity()`
 Returns the humidity value measured by the sensor, in percentage of relative humidity.
 
 Throws an `std::runtime_error` exception if the humidity value can't be read.
 
-### `double HTS221::getTemperature()`
 ___
+### `double HTS221::getTemperature()`
 Returns the temperature value measured by the sensor, in Celsius degrees.
 
 Throws an `std::runtime_error` exception if the temperature value can't be read.
 
-### `void HTS221::powerDown()`
 ___
+### `void HTS221::powerDown()`
 Turns the sensor off, to reduce power consumption.
 
-### `void HTS221::powerUp()`
 ___
+### `void HTS221::powerUp()`
 Turns the sensor on.
 
-### `void HTS221::setAverageHumiditySamples(HTS221AverageHumiditySamples_t averageHumiditySamples)`
 ___
+### `void HTS221::setAverageHumiditySamples(HTS221AverageHumiditySamples_t averageHumiditySamples)`
 Sets the number of samples used to compute the humidity value.
 
 The *averageHumiditySamples* parameter can take one of the following values:
@@ -121,8 +121,8 @@ The *averageHumiditySamples* parameter can take one of the following values:
 |HTS221_AVERAGE_HUMIDITY_256_SAMPLES|
 |HTS221_AVERAGE_HUMIDITY_512_SAMPLES|
 
-### `void HTS221::setAverageTemperatureSamples(HTS221AverageTemperatureSamples_t averageTemperatureSamples)`
 ___
+### `void HTS221::setAverageTemperatureSamples(HTS221AverageTemperatureSamples_t averageTemperatureSamples)`
 Sets the number of samples used to compute the temperature value.
 
 The *averageTemperatureSamples* parameter can take one of the following values:
@@ -138,8 +138,8 @@ The *averageTemperatureSamples* parameter can take one of the following values:
 |HTS221_AVERAGE_TEMPERATURE_128_SAMPLES|
 |HTS221_AVERAGE_TEMPERATURE_256_SAMPLES|
 
-### `void HTS221::setDataRate(HTS221DataRate_t dataRate)`
 ___
+### `void HTS221::setDataRate(HTS221DataRate_t dataRate)`
 Sets the output data rate of the sensor.
 
 The *dataRate* parameter can take one of the following values:
@@ -154,8 +154,8 @@ The *dataRate* parameter can take one of the following values:
 Trying to read the humidity or temperature values more frequently than permitted by the measurement interval will raise
 an exception.
 
-### `void HTS221::triggerMeasurement()`
 ___
+### `void HTS221::triggerMeasurement()`
 Manually triggers a measurement of humidity and temperature values.
 
 If the output data rate of the sensor is set to `HTS221_DATARATE_ONE_SHOT`, you must call this method to trigger a
